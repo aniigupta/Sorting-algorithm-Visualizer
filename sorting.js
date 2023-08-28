@@ -1,4 +1,16 @@
 // swap function util for sorting algorithms takes input of 2 DOM elements with .style.height feature
+
+// For complexity result 
+let best=document.getElementById("best-case");
+let avg=document.getElementById("average-case");
+let wrost=document.getElementById("wrost-case");
+let space=document.getElementById("space-complexity");
+
+// For equal width of array  
+let array_width = document.getElementById("sorting"); 
+// console.log(array_width.offsetWidth); 
+
+console.log(0); 
 function swap(el1, el2) {    
     let temp = el1.style.height;    //third variable for swapping
     el1.style.height = el2.style.height;
@@ -13,6 +25,10 @@ function disableSortingBtn(){
     document.querySelector(".quickSort").disabled = true;
     document.querySelector(".selectionSort").disabled = true;
     document.querySelector(".heapSort").disabled = true;
+    document.querySelector(".countsort").disabled = true;
+    document.querySelector(".bucketsort").disabled = true;
+    document.querySelector(".cocktailsort").disabled = true;
+    document.querySelector(".bricksort").disabled = true;
 }
 
 // Enables sorting buttons used in conjunction with disable
@@ -23,6 +39,11 @@ function enableSortingBtn(){
     document.querySelector(".quickSort").disabled = false;
     document.querySelector(".selectionSort").disabled = false;
     document.querySelector(".heapSort").disabled = false;
+    document.querySelector(".countsort").disabled = false;
+    document.querySelector(".bucketsort").disabled = false;
+    document.querySelector(".cocktailsort").disabled = false;
+    document.querySelector(".bricksort").disabled = false;
+    // document.querySelector(".heapSort").disabled = false;
 }
 
 // Disables size slider used in conjunction with enable, so that we can disable during sorting and enable buttons after it
@@ -95,14 +116,14 @@ let barArray = [];
 createNewArray();
 
 // To create new barArray input size of barArray
-function createNewArray(noOfBars = 60) {
+function createNewArray(noOfBars = 20) {
     // calling helper function to delete old bars from dom
     deleteChild();
 
     // creating an barArray of random numbers 
     barArray = [];
     for (let i = 0; i < noOfBars; i++) {
-        barArray.push(Math.floor(Math.random() * 251));
+        barArray.push(parseInt(Math.floor(Math.random() * 250)));
     }
     console.log(barArray);
 
@@ -112,6 +133,7 @@ function createNewArray(noOfBars = 60) {
     for (let i = 0; i < noOfBars; i++) {
         const bar = document.createElement("div");
         bar.style.height = `${barArray[i]*2}px`;
+        bar.style.width = `${array_width.offsetWidth/noOfBars}px`;
         bar.classList.add('bar');
         bar.classList.add('flex-item');
         bar.classList.add(`barNo${i}`);
