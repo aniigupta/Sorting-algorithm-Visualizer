@@ -22,7 +22,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 40%;
+    width: 40vw;
 }
 .output-container{
     /* border: 2px solid white; */
@@ -39,7 +39,7 @@
 }
 .visual-container{
     /* border: 2px solid yellow; */
-    width: 60%;
+    width: 58vw;
 }
 .text-color {
     color: #e43f5a;
